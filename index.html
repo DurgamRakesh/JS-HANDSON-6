@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-HANDSON-6</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>JAVA SCRIPT HANDSON-6 <br><span class="arr">Problem Solving</span></h1>
+    
+    <h2>1.PrepBuddy has an analog clock which consists of two hands one for hour and another for minute. She wants to calculate the shorter angle formed between hour and minute hand at any given time. <br>
+      <span>Note:</span> You have to complete Minimal_Angle function. No need to take any input.
+    </p>
+    <pre>
+        var Minimal_Angle = (h, m) => 
+        {
+            let hrangle = ((h*360)/12+(m*360)/(12*60));
+            let minangle = ((m*360)/60);
+            let angle = Math.abs(hrangle - minangle);
+            if(angle > 180){
+                angle = 360-angle
+            }
+            return angle
+        };
+
+    </pre>
+    <h2>2.Check whether the year is Leap year or not..</h2>
+    <p>Write a program which takes an year N as input from the user and find out whether the given year is a Leap Year or not. <br>
+        <span>Note:</span> You have to complete Check_Leap function. No need to take any input.  
+    </p>
+    <pre>
+        var Check_Leap = (year) => {
+  
+            if((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)){
+              
+              return 'Leap Year'
+            }
+            else{
+              return 'Non Leap Year'
+            }
+          
+          };
+    </pre>
+    <h2>3.Perfect Number Check..</h2>
+    <p>Have you heard of Perfect numbers? If not let me tell you what is it, Perfect Numbers are integers that are equal to the sum of all its divisors except that number itself.Now, You are given an integer 
+        N, write a program to check whether the given number is a Perfect Number or not. <br>
+        <span>Note:</span> You have to complete Perfect _Check function. No need to take any input.
+    </p>
+    <pre>
+        var Perfect_Check = (N) => 
+        {
+            var a = 0
+            for(let i = 1; i <= N/2; i++){
+                if(N % i === 0){
+                a+=i
+                }
+            }
+            if(a === N && a !== 0){
+                return 'YES'
+            }
+            else{
+                return 'NO'
+            }
+        };
+ 
+
+    </pre>
+    <h2>4.Reverse a Number..</h2>
+    <p>Write a program which takes a numebr N as input from the user and You need to reverse the number. <br>
+        <span>Note:</span> You have to complete Reverse_Number function. No need to take any input.
+    </p>
+    <pre>
+        var Reverse_Number = (N) => 
+        {
+          let rev = 0;
+          while(N !== 0){
+            let c = (N % 10)
+            rev = rev * 10 + c
+            N = Math.floor(N/10)
+          }
+          return rev
+        
+        };
+    </pre>
+    <h2>5.Substring Check..</h2>
+    <p>You are given two strings S1 and S2, you need to check whether the string S1 is a substring of string S2 or not. <br>
+       <span> Note:</span> You have to complete Substring_Check function. No need to take any input.
+    </p>
+    <pre>
+        var Substring_Check = (S1, S2) => 
+            {
+                const a = S1.includes(S2);
+                if(a === true){
+                return 'YES'
+                }
+                else{
+                return 'NO'
+                }
+            };
+    </pre>
+</body>
+</html>
